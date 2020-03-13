@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import * as firebase from 'firebase'
 import 'firebase/database'
+import vuetify from './plugins/vuetify'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAIv7Vf474NWqeWFoE4ffAb6OIEoPyGdEg',
@@ -22,5 +23,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

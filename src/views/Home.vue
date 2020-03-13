@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-container>
+    <v-text-field :rules="rules" v-model="guildId"></v-text-field>
+    <v-radio-group v-model="service" row>
+      <v-radio label="YouTube" value="youtube"></v-radio>
+      <v-radio label="SoundCloud" value="soundcloud"></v-radio>
+    </v-radio-group>
+    <v-btn block color="secondary" :to="nextLink">GO</v-btn>
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      guildId: '',
+      service: 'youtube',
+      rules: [
+        value => {
+          const pattern = /\d+/
+          return pattern.test(value) || 'Invalid guild-id.'
+        }
+      ]
+    }
+  },
+  computed: {
+    nextLink () {
+      return `${this.guildId}/${this.service}`
+    }
   }
 }
 </script>

@@ -19,8 +19,8 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/:guildId',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ListCollection.vue')
+    path: '/:guildId/:service',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ListView.vue')
   }
 ]
 
