@@ -2,6 +2,8 @@
 
 [music-info-collection bot](https://github.com/tsuen4/music-info-collection-bot) で記録された情報を取得していい感じに表示するやつです。（身内用に作りました。）
 
+sample -> <https://music-info-collection-bot.firebaseapp.com/688237096439119919/soundcloud>
+
 ![preview](https://i.imgur.com/rtIYdAj.gif)
 
 ## 起動
