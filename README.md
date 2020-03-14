@@ -1,24 +1,18 @@
 # music-info-collection-front
 
-## Project setup
-```
-npm install
-```
+[music-info-collection bot](https://github.com/tsuen4/music-info-collection-bot) で記録された情報を取得していい感じに表示するやつです。（身内用に作りました。）
 
-### Compiles and hot-reloads for development
-```
+![preview](https://i.imgur.com/rtIYdAj.gif)
+
+## 起動
+
+```bash
+npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
+## ビルド
+
+```bash
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
