@@ -38,18 +38,12 @@ export default {
         this.listData = snapshot.val()
         this.loading = false
       })
-      setTimeout(() => {
-        this.$vuetify.goTo('#bottom')
-      }, 500)
     }
   },
   mounted () {
     firebase.database().ref(`tracks/${this.guildId}/${this.service}`).on('value', snapshot => {
       this.listData = snapshot.val()
     })
-    setTimeout(() => {
-      this.$vuetify.goTo('#bottom')
-    }, 1500)
   },
   computed: {
     parseService () {

@@ -27,9 +27,6 @@ export default {
     firebase.database().ref(`tracks/${this.guildId}/${this.service}`).on('value', snapshot => {
       this.listData = snapshot.val()
     })
-    setTimeout(() => {
-      this.$vuetify.goTo('#bottom')
-    }, 1500)
   },
   methods: {
     test () {
