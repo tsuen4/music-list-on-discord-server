@@ -34,14 +34,14 @@ export default {
   },
   watch: {
     service () {
-      firebase.database().ref(`tracks/${this.guildId}/${this.service}`).on('value', snapshot => {
+      firebase.database().ref(`tracks/${this.guildId}`).on('value', snapshot => {
         this.listData = snapshot.val()
         this.loading = false
       })
     }
   },
   mounted () {
-    firebase.database().ref(`tracks/${this.guildId}/${this.service}`).on('value', snapshot => {
+    firebase.database().ref(`tracks/${this.guildId}`).on('value', snapshot => {
       this.listData = snapshot.val()
     })
   },
