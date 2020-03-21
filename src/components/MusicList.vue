@@ -2,7 +2,7 @@
   <v-container>
     <span id="top" />
     <template v-for="(item, index) in listData">
-      <MusicCard v-bind="item" :key="index" />
+      <MusicCard v-bind="item" :index="index" :key="index" />
     </template>
     <span id="bottom" />
   </v-container>

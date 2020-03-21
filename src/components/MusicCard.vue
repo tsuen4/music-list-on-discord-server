@@ -36,14 +36,14 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item @click="remove">
+          <!-- <v-list-item @click="remove">
             <v-list-item-icon>
               <v-icon>mdi-delete</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>Delete this item</v-list-item-title>
             </v-list-item-content>
-          </v-list-item>
+          </v-list-item> -->
         </v-list>
       </div>
     </v-expand-transition>
@@ -58,7 +58,7 @@
 <script>
 import axios from 'axios'
 // import firebase from 'firebase/app'
-import 'firebase/database'
+// import 'firebase/database'
 
 export default {
   props: {
@@ -118,10 +118,10 @@ export default {
     }
   },
   methods: {
-    remove () {
-      // firebase.database().ref(this.index)
-      this.removedSnackbar = true
-    }
+    // remove () {
+    //   firebase.database().ref(this.index).remove()
+    //     .then(() => { this.removedSnackbar = true })
+    // }
   }
 }
 </script>
