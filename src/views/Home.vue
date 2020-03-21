@@ -12,7 +12,6 @@ export default {
   data () {
     return {
       guildId: '',
-      service: 'youtube',
       rules: [
         value => {
           const pattern = /\d+/
@@ -23,7 +22,7 @@ export default {
   },
   methods: {
     nextLink () {
-      this.$router.push(`${this.guildId}/${this.service}`)
+      this.$router.push(`${this.guildId}`)
     }
   }
 }
