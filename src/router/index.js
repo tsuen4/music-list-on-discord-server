@@ -11,8 +11,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/:guildId/',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ListView.vue')
+    path: '/:guildId',
+    component: () => import(/* webpackChunkName: "music-list" */ '../views/ListView.vue')
   }
 ]
 
