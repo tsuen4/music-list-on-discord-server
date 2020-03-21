@@ -4,7 +4,6 @@
       <div>
         <v-card-title class="mt-n1" v-text="title" />
         <!-- <v-card-subtitle v-text="author" /> -->
-
         <v-card-actions>
           <v-btn :href="url" target="_blank" class="mt-n3" text small>Open {{ parseService }}</v-btn>
         </v-card-actions>
