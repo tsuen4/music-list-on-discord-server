@@ -12,7 +12,8 @@
     </div>
     <v-card-actions>
       <v-btn :href="url" target="_blank" class="mt-n3" text small>
-        <v-icon left>{{ serviceIcon }}</v-icon>{{ parseService }}
+        <v-icon left>{{ serviceIcon }}</v-icon>
+        {{ parseService }}
       </v-btn>
 
       <v-spacer />
@@ -43,7 +44,7 @@
             <v-list-item-content>
               <v-list-item-title>Delete this item</v-list-item-title>
             </v-list-item-content>
-          </v-list-item> -->
+          </v-list-item>-->
         </v-list>
       </div>
     </v-expand-transition>
