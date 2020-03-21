@@ -1,9 +1,11 @@
+const path = require('path')
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
 const getInfo = require('./get-info')
 
+app.use(express.static(path.join(__dirname, '../dist')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.listen(port, () => console.log(`port: ${port}`))
@@ -25,6 +27,7 @@ app.post('/api/get-info', async (req, res) => {
       res.json(data)
       break
     default:
+      res.json(null)
       break
   }
 })
