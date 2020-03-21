@@ -11,8 +11,8 @@
       </v-avatar>
     </div>
     <v-card-actions>
-      <v-btn icon :href="url" target="_blank" class="mt-n3" text small>
-        <v-icon>{{ serviceIcon }}</v-icon>
+      <v-btn :href="url" target="_blank" class="mt-n3" text small>
+        <v-icon left>{{ serviceIcon }}</v-icon>{{ parseService }}
       </v-btn>
 
       <v-spacer />
