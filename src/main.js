@@ -2,19 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
-import * as firebase from 'firebase'
+import * as firebase from 'firebase/app'
 import 'firebase/database'
 import vuetify from './plugins/vuetify'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAIv7Vf474NWqeWFoE4ffAb6OIEoPyGdEg',
-  authDomain: 'music-info-collection-bot.firebaseapp.com',
-  databaseURL: 'https://music-info-collection-bot.firebaseio.com',
-  // projectId: 'music-info-collection-bot',
-  storageBucket: 'music-info-collection-bot.appspot.com'
-  // messagingSenderId: '1020277248178',
-  // appId: '1:1020277248178:web:8818e559ecd101e758f9ab',
-  // measurementId: 'G-KEHSD8C8T2'
+  apiKey: 'AIzaSyAIByc34FDw8E8zqlyRRc7ZwuOoYmLWCXE',
+  authDomain: 'music-list-on-discord-server.firebaseapp.com',
+  databaseURL: 'https://music-list-on-discord-server.firebaseio.com',
+  storageBucket: 'music-list-on-discord-server.appspot.com'
 }
 
 firebase.initializeApp(firebaseConfig)
