@@ -1,15 +1,15 @@
 <template>
-  <v-bottom-navigation app grow>
-    <v-btn @click="toTop">
-      <span>Top</span>
+  <v-app-bar dense bottom app>
+    <v-spacer />
+
+    <v-btn @click="toTop" icon>
       <v-icon>mdi-arrow-collapse-up</v-icon>
     </v-btn>
 
-    <v-btn @click="toBottom">
-      <span>Bottom</span>
+    <v-btn @click="toBottom" icon>
       <v-icon>mdi-arrow-collapse-down</v-icon>
     </v-btn>
-  </v-bottom-navigation>
+  </v-app-bar>
 </template>
 
 <script>
