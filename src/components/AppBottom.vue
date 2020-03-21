@@ -1,15 +1,5 @@
 <template>
-  <v-bottom-navigation app grow color="teal">
-    <v-btn @click="toYouTube">
-      <span>YouTube</span>
-      <v-icon>mdi-youtube</v-icon>
-    </v-btn>
-
-    <v-btn @click="toSoundCloud">
-      <span>SoundCloud</span>
-      <v-icon>mdi-soundcloud</v-icon>
-    </v-btn>
-
+  <v-bottom-navigation app grow>
     <v-btn @click="toTop">
       <span>Top</span>
       <v-icon>mdi-arrow-collapse-up</v-icon>

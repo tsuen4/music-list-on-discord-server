@@ -5,7 +5,7 @@
       <v-radio label="YouTube" value="youtube"></v-radio>
       <v-radio label="SoundCloud" value="soundcloud"></v-radio>
     </v-radio-group>
-    <v-btn block color="secondary" @click="nextLink">GO</v-btn>
+    <v-btn block @click="nextLink">GO</v-btn>
   </v-container>
 </template>
 

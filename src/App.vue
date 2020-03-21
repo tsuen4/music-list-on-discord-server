@@ -1,9 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app dense>
       <v-toolbar-title>
-        <router-link to="/" class="top-link">Music list</router-link>
+        <v-btn to="/" class="mx-n5" x-large tile text>Music List</v-btn>
       </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-switch v-model="$vuetify.theme.dark" hide-details color="grey darken-1" label="Dark"></v-switch>
     </v-app-bar>
 
     <v-content>
@@ -22,8 +24,4 @@ export default {
 </script>
 
 <style scoped>
-.top-link {
-  color: #fff;
-  text-decoration: none;
-}
 </style>
