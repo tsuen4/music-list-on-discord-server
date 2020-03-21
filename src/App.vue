@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <v-toolbar-title>
-        <router-link to="/" class="top-link">Posted music list</router-link>
+        <router-link to="/" class="top-link">Music list</router-link>
       </v-toolbar-title>
     </v-app-bar>
 
