@@ -2,9 +2,11 @@
 
 [get-music-url-bot](https://github.com/tsuen4/get-music-url-bot) で記録された情報を取得していい感じに表示するやつです。（身内用に作りました。）
 
-sample -> <https://music-info-collection-bot.firebaseapp.com/688237096439119919/soundcloud>
+Discord 側に表示される埋め込みプレーヤーで遡るのが面倒になってしまったために作ったものです。
 
-![preview](https://i.imgur.com/rtIYdAj.gif)
+sample -> <https://aqueous-sands-39558.herokuapp.com/688237096439119919>
+
+![preview](https://i.imgur.com/eRNCxpS.gif)
 
 ## 起動
 
