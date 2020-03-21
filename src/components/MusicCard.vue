@@ -4,23 +4,65 @@
       <div>
         <v-card-title class="mt-n1" v-text="title" />
         <!-- <v-card-subtitle v-text="author" /> -->
-        <v-card-actions>
-          <v-btn :href="url" target="_blank" class="mt-n3" text small>Open {{ parseService }}</v-btn>
-        </v-card-actions>
       </div>
 
       <v-avatar size="92" tile>
         <v-img :src="thumbnail" />
       </v-avatar>
     </div>
+    <v-card-actions>
+      <v-btn icon :href="url" target="_blank" class="mt-n3" text small>
+        <v-icon>{{ serviceIcon }}</v-icon>
+      </v-btn>
+
+      <v-spacer />
+
+      <v-btn icon @click="show = !show" small>
+        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+      </v-btn>
+    </v-card-actions>
+
+    <v-expand-transition>
+      <div v-show="show">
+        <v-divider />
+
+        <v-list dense>
+          <v-list-item :href="`https://www.google.com/search?q=${title}`" target="_blank">
+            <v-list-item-icon>
+              <v-icon>mdi-search-web</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Search: '{{ title }}'</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item @click="remove">
+            <v-list-item-icon>
+              <v-icon>mdi-delete</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Delete this item</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </div>
+    </v-expand-transition>
+
+    <v-snackbar v-model="removedSnackbar">
+      Deleted {{ title }}
+      <v-btn color="red" text @click="removedSnackbar = false">Close</v-btn>
+    </v-snackbar>
   </v-card>
 </template>
 
 <script>
 import axios from 'axios'
+// import firebase from 'firebase/app'
+import 'firebase/database'
 
 export default {
   props: {
+    index: String,
     url: String,
     service: String,
     time: Number
@@ -30,7 +72,9 @@ export default {
       title: '',
       author: '',
       src: '',
-      thumbnail: ''
+      thumbnail: '',
+      show: false,
+      removedSnackbar: false
     }
   },
   mounted () {
@@ -61,6 +105,22 @@ export default {
         return 'Spotify'
       }
       return ''
+    },
+    serviceIcon () {
+      if (this.service === 'soundcloud') {
+        return 'mdi-soundcloud'
+      } else if (this.service === 'youtube') {
+        return 'mdi-youtube'
+      } else if (this.service === 'spotify') {
+        return 'mdi-spotify'
+      }
+      return ''
+    }
+  },
+  methods: {
+    remove () {
+      // firebase.database().ref(this.index)
+      this.removedSnackbar = true
     }
   }
 }
