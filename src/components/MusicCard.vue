@@ -9,7 +9,7 @@
         </v-card-actions>
       </div>
 
-      <v-avatar class size="92" tile>
+      <v-avatar size="92" tile>
         <v-img :src="thumbnail" />
       </v-avatar>
     </div>
