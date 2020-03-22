@@ -3,7 +3,7 @@
     <div class="d-flex flex-no-wrap justify-space-between">
       <div>
         <v-card-title class="mt-n1" v-text="title" />
-        <!-- <v-card-subtitle v-text="author" /> -->
+        <v-card-subtitle v-text="description" />
       </div>
 
       <v-avatar size="92" tile>
@@ -71,8 +71,7 @@ export default {
   data () {
     return {
       title: '',
-      author: '',
-      src: '',
+      description: '',
       thumbnail: '',
       show: false,
       removedSnackbar: false
@@ -80,15 +79,13 @@ export default {
   },
   mounted () {
     axios.post('/api/get-info', {
-      url: this.url,
-      service: this.service
+      url: this.url
     })
       .then(res => {
         const data = res.data
         // console.log(data)
         this.title = data.title
-        this.author = data.author_name
-        this.src = data.html
+        this.description = data.description
         this.thumbnail = data.thumbnail_url
       })
       .catch(error => console.error('Error: ', error))

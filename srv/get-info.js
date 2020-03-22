@@ -1,9 +1,9 @@
-const axios = require('axios')
 const { JSDOM } = require('jsdom')
 
 const OGP = async (url) => {
   const data = {
     title: '',
+    description: '',
     thumbnail_url: ''
   }
   await JSDOM.fromURL(url)
@@ -11,9 +11,11 @@ const OGP = async (url) => {
       const document = dom.window.document
       if (document.head.querySelector('[property=og\\:title]')) {
         data.title = document.head.querySelector('[property=og\\:title]').content
-        data.thumbnail_url = document.head.querySelector('[property=og\\:image]').content
+        data.description = document.head.querySelector('[property=og\\:description]').content
+        data.thumbnail_url = document.querySelector('[property=og\\:image]').content
       } else if (document.querySelector('[name=og\\:title]')) {
         data.title = document.querySelector('[name=og\\:title]').content
+        data.description = document.head.querySelector('[name=og\\:description]').content
         data.thumbnail_url = document.querySelector('[name=og\\:image]').content
       }
       // console.log(data)
@@ -21,10 +23,4 @@ const OGP = async (url) => {
   return data
 }
 
-const oEmbed = async (URI) => {
-  return axios.get(URI)
-    .then(res => res.data)
-    .catch(err => console.error(err))
-}
-
-module.exports = { oEmbed, OGP }
+module.exports = { OGP }
