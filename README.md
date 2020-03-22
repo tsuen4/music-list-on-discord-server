@@ -4,7 +4,7 @@
 
 Discord 側に表示される埋め込みプレーヤーで遡るのが面倒になってしまったために作ったものです。
 
-sample -> <https://aqueous-sands-39558.herokuapp.com/688237096439119919>
+sample -> <https://music-list-on-discord-server.herokuapp.com/688237096439119919>
 
 ![preview](https://i.imgur.com/eRNCxpS.gif)
 
