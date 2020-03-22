@@ -104,6 +104,12 @@ export default {
         return 'YouTube'
       } else if (this.service === 'spotify') {
         return 'Spotify'
+      } else if (this.service === 'bandcamp') {
+        return 'Bandcamp'
+      } else if (this.service === 'beatport') {
+        return 'Beatport'
+      } else if (this.service === 'applemusic') {
+        return 'Apple Music'
       }
       return ''
     },
@@ -114,6 +120,12 @@ export default {
         return 'mdi-youtube'
       } else if (this.service === 'spotify') {
         return 'mdi-spotify'
+      } else if (this.service === 'bandcamp') {
+        return 'mdi-bandcamp'
+      } else if (this.service === 'beatport') {
+        return 'mdi-open-in-new'
+      } else if (this.service === 'applemusic') {
+        return 'mdi-open-in-new'
       }
       return ''
     }
