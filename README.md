@@ -15,8 +15,9 @@ npm install
 npm run serve
 ```
 
-## ビルド
+## デプロイ
 
 ```bash
-npm run build
+npm run build # 静的ファイルを生成
+npm run express
 ```
