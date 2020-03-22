@@ -3,13 +3,12 @@
     <div class="d-flex flex-no-wrap justify-space-between">
       <div>
         <v-card-title class="mt-n1" v-text="title" />
-        <v-card-subtitle v-text="description" />
       </div>
-
       <v-avatar size="82" tile>
         <v-img :src="thumbnail" />
       </v-avatar>
     </div>
+
     <v-card-actions>
       <v-btn :href="url" target="_blank" class="mt-n3" text small>
         <v-icon left>{{ serviceIcon }}</v-icon>
@@ -28,6 +27,15 @@
         <v-divider />
 
         <v-list dense>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title>Description</v-list-item-title>
+              <v-list-item-subtitle v-for="(line, index) in description" :key="index">{{ line }}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-divider />
+
           <v-list-item :href="`https://www.google.com/search?q=${title}`" target="_blank">
             <v-list-item-icon>
               <v-icon>mdi-search-web</v-icon>
@@ -71,7 +79,7 @@ export default {
   data () {
     return {
       title: '',
-      description: '',
+      description: [],
       thumbnail: '',
       show: false,
       removedSnackbar: false
@@ -85,7 +93,7 @@ export default {
         const data = res.data
         // console.log(data)
         this.title = data.title
-        this.description = data.description
+        this.description = data.description.split('\n')
         this.thumbnail = data.thumbnail_url
       })
       .catch(error => console.error('Error: ', error))
