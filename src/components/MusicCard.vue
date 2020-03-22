@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto ma-2">
+  <v-card class="mx-auto ma-2" v-if="title">
     <div class="d-flex flex-no-wrap justify-space-between">
       <div>
         <v-card-title class="mt-n1" v-text="title" />
