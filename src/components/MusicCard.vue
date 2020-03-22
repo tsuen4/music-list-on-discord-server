@@ -6,7 +6,7 @@
         <v-card-subtitle v-text="description" />
       </div>
 
-      <v-avatar size="92" tile>
+      <v-avatar size="82" tile>
         <v-img :src="thumbnail" />
       </v-avatar>
     </div>
