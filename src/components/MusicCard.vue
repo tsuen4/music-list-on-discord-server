@@ -71,7 +71,6 @@ import axios from 'axios'
 
 export default {
   props: {
-    index: String,
     url: String,
     service: String,
     time: Number
