@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <span id="top" />
-    <template v-for="(item, index) in listData">
-      <MusicCard v-bind="item" :index="index" :key="index" />
+    <template v-for="item in listData">
+      <MusicCard v-bind="item" :key="item.time && item.url" />
     </template>
     <span id="bottom" />
   </v-container>
@@ -23,15 +23,23 @@ export default {
   },
   data () {
     return {
-      listData: null
+      getData: null
     }
   },
   mounted () {
     firebase.database().ref(`tracks/${this.guildId}`).on('value', snapshot => {
-      this.listData = snapshot.val()
+      this.getData = snapshot.val()
     })
   },
   computed: {
+    listData () {
+      const list = []
+      for (const el in this.getData) {
+        // console.dir(this.getData[el])
+        list.push(this.getData[el])
+      }
+      return list.reverse()
+    }
   }
 }
 </script>
