@@ -20,12 +20,6 @@ export default {
     },
     toBottom () {
       this.$vuetify.goTo('#bottom')
-    },
-    toYouTube () {
-      this.$router.push({ path: `/${this.$route.params.guildId}/youtube` })
-    },
-    toSoundCloud () {
-      this.$router.push({ path: `/${this.$route.params.guildId}/soundcloud` })
     }
   }
 }
