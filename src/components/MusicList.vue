@@ -19,7 +19,8 @@ export default {
   },
   props: {
     service: String,
-    guildId: String
+    guildId: String,
+    desc: Boolean
   },
   data () {
     return {
@@ -38,7 +39,10 @@ export default {
         // console.dir(this.getData[el])
         list.push(this.getData[el])
       }
-      return list.reverse()
+      if (this.desc) {
+        return list.reverse()
+      }
+      return list
     }
   }
 }

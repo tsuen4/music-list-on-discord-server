@@ -1,7 +1,7 @@
 <template>
   <div class="list-view">
-    <MusicList :guildId="guildId" />
-    <AppBottom />
+    <MusicList :guildId="guildId" :desc="desc" />
+    <AppBottom @desc="desc = !desc" />
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
   data () {
     return {
       listData: null,
-      guildId: this.$route.params.guildId
+      guildId: this.$route.params.guildId,
+      desc: true
     }
   },
   mounted () {
