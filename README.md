@@ -12,6 +12,9 @@ sample -> <https://music-list-on-discord-server.herokuapp.com/688237096439119919
 
 ```bash
 npm install
+
+# 別々のターミナルで起動
+npm run express
 npm run serve
 ```
 
