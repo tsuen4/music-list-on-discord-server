@@ -18,7 +18,6 @@ export default {
     MusicCard
   },
   props: {
-    service: String,
     guildId: String,
     desc: Boolean
   },
